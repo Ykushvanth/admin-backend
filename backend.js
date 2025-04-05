@@ -38,6 +38,7 @@ const verifyAdminToken = (req, res, next) => {
         return res.status(401).json({ error: 'No token provided' });
     }
 
+    
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
         req.adminId = decoded.adminId;
